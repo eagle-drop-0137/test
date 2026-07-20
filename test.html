@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Premium Biodata V2</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --black: #111111;
+        --red: #ff5252;
+        --blue: #4da3ff;
+        --border: #ececec;
+        --light: #fafafa;
+        --gray: #767676;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family:
+          Inter,
+          Segoe UI,
+          sans-serif;
+        background: radial-gradient(circle at top, #fff, #f4f6fb);
+        padding: 40px;
+      }
+      .page {
+        width: 980px;
+        min-height: 1200px;
+        margin: auto;
+        background: #fff;
+        border-radius: 36px;
+        position: relative;
+        box-shadow: 0 30px 90px rgba(0, 0, 0, 0.08);
+        padding: 70px;
+        overflow: hidden;
+      }
+      .quote {
+        position: absolute;
+        font-size: 240px;
+        opacity: 0.03;
+        font-weight: 700;
+        color: #000;
+        user-select: none;
+      }
+      .q1 {
+        top: -40px;
+        left: 20px;
+      }
+      .q2 {
+        bottom: -120px;
+        right: 20px;
+      }
+
+      .grid {
+        margin-top: 70px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 26px;
+        align-items: start;
+      }
+      .card {
+        position: relative;
+        padding: 2px;
+        border-radius: 30px;
+        background: linear-gradient(135deg, var(--red), #ffb3b3, var(--blue));
+        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+      }
+      .card:nth-child(1) .inner {
+        height: calc(100% - 1px);
+      }
+      .card:nth-child(2) {
+        background: linear-gradient(135deg, var(--blue), #dfefff, var(--red));
+        margin-top: 34px;
+      }
+      .card:nth-child(3) {
+        background: linear-gradient(135deg, var(--blue), #fff, var(--red));
+      }
+      .card:nth-child(4) {
+        background: linear-gradient(135deg, var(--red), #fff, var(--blue));
+        margin-top: 34px;
+      }
+
+      .card:nth-child(2) .inner {
+        min-height: 600px;
+      }
+      .card:nth-child(3) .inner,
+      .card:nth-child(4) .inner {
+        min-height: 470px;
+      }
+      .inner {
+        background: #fff;
+        border-radius: 28px;
+        padding: 28px;
+        min-height: 400px;
+        position: relative;
+        overflow: hidden;
+      }
+      .watermark {
+        position: absolute;
+        right: -5px;
+        top: -15px;
+        font-size: 180px;
+        font-weight: 700;
+        opacity: 0.025;
+        color: #000;
+      }
+      .title {
+        font-size: 12px;
+        letter-spacing: 3px;
+        font-weight: 700;
+        color: var(--black);
+      }
+      .line {
+        margin: 12px 0 24px;
+        width: 52px;
+        height: 3px;
+        background: var(--red);
+        border-radius: 5px;
+      }
+      .label {
+        font-size: 11px;
+        letter-spacing: 2px;
+        color: #999;
+        text-transform: uppercase;
+        margin-bottom: 6px;
+      }
+      .value {
+        font-size: 22px;
+        font-weight: 600;
+        color: var(--black);
+        margin-bottom: 24px;
+      }
+      .stats {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+        margin-bottom: 26px;
+      }
+      .stat {
+        padding-bottom: 12px;
+        border-bottom: 1px solid var(--border);
+      }
+      .stat .v {
+        font-weight: 600;
+        font-size: 16px;
+        margin-top: 5px;
+      }
+      .section {
+        margin-top: 24px;
+        padding-top: 22px;
+        border-top: 1px solid var(--border);
+      }
+      .section h3 {
+        font-size: 12px;
+        letter-spacing: 2px;
+        margin-bottom: 18px;
+      }
+      .row {
+        display: flex;
+        justify-content: space-between;
+        padding: 8px 0;
+        font-size: 14px;
+      }
+      .row span:first-child {
+        color: #666;
+      }
+      .job {
+        margin-top: 10px;
+        border-left: 4px solid var(--blue);
+        padding-left: 16px;
+      }
+      .job h4 {
+        font-size: 22px;
+        margin-bottom: 6px;
+      }
+      .job p {
+        color: #666;
+        line-height: 1.6;
+      }
+      .placeholder {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        color: #999;
+        font-size: 18px;
+        letter-spacing: 2px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <div class="quote q1">“</div>
+      <div class="quote q2">”</div>
+
+      <div class="grid">
+        <div class="card">
+          <div class="inner">
+            <div class="watermark">P</div>
+
+            <div class="title">PERSONAL PROFILE</div>
+            <div class="line"></div>
+
+            <div class="label">Full Name</div>
+            <div class="value">Bhavya Ankhja</div>
+
+            <div class="stats">
+              <div class="stat">
+                <div class="label">Date of Birth</div>
+                <div class="v">11 Jan 2002</div>
+              </div>
+              <div class="stat">
+                <div class="label">Height</div>
+                <div class="v">5'6"</div>
+              </div>
+              <div class="stat">
+                <div class="label">Weight</div>
+                <div class="v">65 Kg</div>
+              </div>
+            </div>
+
+            <div class="section">
+              <h3>EDUCATION</h3>
+
+              <div class="row">
+                <span>Primary & Higher</span>
+                <strong>Navyug Vidhyalay , Morbi</strong>
+              </div>
+
+              <div class="row">
+                <span>Graduation</span>
+                <strong>DAIICT , Gandhinagar</strong>
+              </div>
+            </div>
+
+            <div class="section">
+              <h3>CURRENT OCCUPATION</h3>
+              <div class="job">
+                <h4>Eagle Drop</h4>
+                <p>2‑Wheeler Logistic Mobile Application</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="inner">
+            <div class="watermark">F</div>
+            <div class="title">FAMILY DETAILS</div>
+            <div class="line"></div>
+
+            <div
+              class="section"
+              style="border-top: none; padding-top: 0; margin-top: 0"
+            >
+              <div class="row" style="padding: 12px 0">
+                <div>
+                  <div class="label">Father</div>
+                  <div class="value" style="font-size: 18px; margin-top: 4px">
+                    Vinod Ankhja
+                  </div>
+                </div>
+
+                <div
+                  style="
+                    color: #666;
+                    font-size: 14px;
+                    text-align: right;
+                    align-self: center;
+                  "
+                >
+                  (Real Estate Entrepreneur)
+                </div>
+              </div>
+
+              <div class="row" style="padding: 12px 0">
+                <div>
+                  <div class="label">Mother</div>
+                  <div class="value" style="font-size: 18px; margin-top: 4px">
+                    Lata Ankhja
+                  </div>
+                </div>
+
+                <div
+                  style="
+                    color: #666;
+                    font-size: 14px;
+                    text-align: right;
+                    align-self: center;
+                  "
+                >
+                  (Homemaker)
+                </div>
+              </div>
+
+              <div class="row" style="padding: 12px 0">
+                <div>
+                  <div class="label">Sister</div>
+                  <div class="value" style="font-size: 18px; margin-top: 4px">
+                    Vilash Ankhja
+                  </div>
+                </div>
+
+                <div
+                  style="
+                    color: #666;
+                    font-size: 14px;
+                    text-align: right;
+                    align-self: center;
+                  "
+                >
+                  (Older Sister)
+                </div>
+              </div>
+            </div>
+
+            <div class="section">
+              <div class="row">
+                <span>Native Place</span
+                ><strong>Jasmatgadh, Morbi, Gujarat</strong>
+              </div>
+            </div>
+
+            <div class="section">
+              <div style="padding: 10px 0; border-bottom: 1px solid #ececec">
+                <div class="label">Maternal Family</div>
+                <div class="value" style="font-size: 18px; margin: 2px 0 0">
+                  Patel Family
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="inner">
+            <div class="watermark">L</div>
+
+            <div class="title">LIFESTYLE</div>
+            <div class="line"></div>
+
+            <div
+              style="
+                color: #777;
+                font-size: 13px;
+                line-height: 1.6;
+                margin-bottom: 24px;
+              "
+            >
+              A glimpse into my personality and everyday life.
+            </div>
+            <div
+              style="
+                height: 320px;
+                border-radius: 24px;
+                overflow: hidden;
+                margin-bottom: 26px;
+                background: #f6f6f6;
+                border: 1px solid #ececec;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+              "
+            >
+              <img
+                src="IMG.jpeg"
+                alt="Bhavya Ankhja"
+                style="
+                  width: 100%;
+                  height: 100%;
+                  object-fit: contain;
+                  display: block;
+                  background: #fff;
+                "
+              />
+            </div>
+
+            <div class="section">
+              <h3>ABOUT ME</h3>
+              <div style="color: #666; line-height: 1.8; font-size: 14px">
+                Add a short introduction, hobbies, interests, values, or
+                lifestyle here.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="inner">
+            <div class="watermark">C</div>
+            <div class="title">CONTACT</div>
+            <div class="line"></div>
+            <div
+              style="
+                color: #777;
+                font-size: 13px;
+                line-height: 1.6;
+                margin-bottom: 26px;
+              "
+            >
+              Feel free to connect with our family.
+            </div>
+
+            <div class="job" style="border-left-color: #4da3ff">
+              <h4 style="margin-top: 4px">Bhavya Ankhja</h4>
+              <p>+91 98765 43210</p>
+            </div>
+
+            <div
+              class="job"
+              style="margin-top: 28px; border-left-color: #ff5252"
+            >
+              <h4 style="margin-top: 4px">Vinod Ankhja</h4>
+              <p>+91 98765 43211</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ========================= PAGE 2 ========================= -->
+
+    <div class="page" style="margin-top: 70px; page-break-before: always">
+      <!-- Decorative Quotes -->
+      <div class="quote q1">“</div>
+      <div class="quote q2">”</div>
+
+      <div
+        style="
+          width: 82%;
+          margin: 70px auto 0;
+          padding: 2px;
+          border-radius: 30px;
+          background: linear-gradient(135deg, #1f8f5f, #79d4a6, #3db7b3);
+          box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+        "
+      >
+        <div style="background: #fff; border-radius: 28px; padding: 18px">
+          <img
+            src="IMG1.jpeg"
+            alt="Bhavya Ankhja"
+            style="width: 100%; display: block; border-radius: 18px"
+          />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
